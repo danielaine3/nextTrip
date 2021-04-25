@@ -1,7 +1,14 @@
+import React from 'react'
+import { getDirections, getRoutes, getStops } from './api'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+
+export const App = () => {
+  getRoutes()
+  getDirections(902)
+  getStops(902, 1)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,5 +28,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
