@@ -21,9 +21,16 @@ export const Dropdown = ({
         onChange={handleChange}
         value={selected}
       >
-        <option key={'key1'} value={'value1'}>Route1</option>
-        <option key={'key2'} value={'value2'}>Route2</option>
-        <option key={'key3'} value={'value3'}>Route3</option>
+        {options.map(option => {
+          return (
+            <option
+              key={option.route_id}
+              value={option.route_id}
+            >
+              {option.route_label}
+            </option>
+          )
+        })}
       </select>
     </>
   )
