@@ -1,4 +1,4 @@
-export const getRoutes = async () => {
+export const fetchRoutes = async () => {
   try {
     const response = await fetch(`https://svc.metrotransit.org/nextripv2/routes/`)
     const data = await response.json()

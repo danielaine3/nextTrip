@@ -1,3 +1,3 @@
-export { getDirections } from './getDirections'
-export { getRoutes } from './getRoutes'
-export { getStops } from './getStops'
+export { fetchDirections } from './fetchDirections'
+export { fetchRoutes } from './fetchRoutes'
+export { fetchStops } from './fetchStops'
