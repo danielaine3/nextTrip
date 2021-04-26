@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRoutes } from '../../hooks'
+import { Departures } from '../Departures'
 import { DirectionsDropdown } from './DirectionsDropdown'
 import { RoutesDropdown } from './RoutesDropdown'
 import { StopsDropdown } from './StopsDropdown'
@@ -15,6 +16,7 @@ export const AllDropdowns = () => {
         <RoutesDropdown routes={routes} routeId={routeId} setRouteId={setRouteId} />
         <DirectionsDropdown routeId={routeId} directionId={directionId} setDirectionId={setDirectionId} />
         <StopsDropdown routeId={routeId} directionId={directionId} stopId={stopId} setStopId={setStopId} />
+        <Departures routeId={routeId} directionId={directionId} stopId={stopId} />
     </>
   )
 }
