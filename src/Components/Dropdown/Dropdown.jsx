@@ -24,10 +24,10 @@ export const Dropdown = ({
         {options.map(option => {
           return (
             <option
-              key={option.route_id}
-              value={option.route_id}
+              key={option.route_id || option.direction_id || option.place_code}
+              value={option.route_id || option.direction_id || option.place_code}
             >
-              {option.route_label}
+              {option.route_label || option.direction_name || option.description}
             </option>
           )
         })}
