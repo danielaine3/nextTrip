@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://localhose:3000",
+  "chromeWebSecurity": false, 
+  "viewportWidth": 1200,
+  "viewporrHeight": 720
+}
