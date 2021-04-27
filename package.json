@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "eslint-plugin-cypress": "^2.11.2",
     "jest-fetch-mock": "^3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,9 +20,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject", 
+    "eject": "react-scripts eject",
     "cypress:open": "cypress open",
-    "cypress:run":"cypress run --broswer chrome"
+    "cypress:run": "cypress run --broswer chrome",
+    "cypress": "start-server-and-test start http://localhost:3000 cypress:open"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +44,8 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^7.2.0"
+    "@testing-library/cypress": "^7.0.6",
+    "cypress": "^7.2.0",
+    "start-server-and-test": "^1.12.1"
   }
 }
