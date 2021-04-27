@@ -3,6 +3,7 @@ import { fetchRoutes } from './fetchRoutes'
 
 beforeEach(() => {
     fetchMock.resetMocks()
+    fetchMock.enableMocks()
 })
 
 describe('Testing departures service', () => {

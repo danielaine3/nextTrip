@@ -3,6 +3,7 @@ import { fetchStops } from './fetchStops'
 
 beforeEach(() => {
     fetchMock.resetMocks()
+    fetchMock.enableMocks()
 })
 
 describe('Testing departures service', () => {

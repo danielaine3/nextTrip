@@ -23,7 +23,7 @@ export const Departures = () => {
   )
 
   return (
-    <TableContainer component={Paper} >
+    <TableContainer component={Paper} data-testid='departures-table'>
       <Table>
         <TableHead>
           {departureData.stops.map(stop => (

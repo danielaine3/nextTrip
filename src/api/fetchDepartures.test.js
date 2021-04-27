@@ -2,7 +2,8 @@ import fetchMock from 'jest-fetch-mock'
 import { fetchDepartures } from './fetchDepartures'
 
 beforeEach(() => {
-    fetchMock.resetMocks()
+  fetchMock.resetMocks()
+  fetchMock.enableMocks()
 })
 
 describe('Testing departures service', () => {

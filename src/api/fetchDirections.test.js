@@ -3,6 +3,7 @@ import { fetchDirections } from './fetchDirections'
 
 beforeEach(() => {
     fetchMock.resetMocks()
+    fetchMock.enableMocks()
 })
 
 describe('Testing departures service', () => {
