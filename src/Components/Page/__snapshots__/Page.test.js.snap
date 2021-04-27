@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Page /> should render Page 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthSm"
+  >
+    <h5
+      class="MuiTypography-root makeStyles-title-1 MuiTypography-h5"
+    >
+      title
+    </h5>
+    <div>
+      Test Child
+    </div>
+    <div>
+      Test Child
+    </div>
+  </div>
+</DocumentFragment>
+`;
