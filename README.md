@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Steps to run tests
 
 - `yarn test` to run jest unit tests
-- `yarn run cypress` to run cypress integration tests
+- `yarn run cypress` to open cypress integration tests. Once cypress window opens, click `NexTrip.spec.js`.
 
 ### Assumptions
 
