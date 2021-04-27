@@ -1,15 +1,29 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { useDepartures } from '../../hooks/useDepartures'
-import { Paper, TableContainer, Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/core'
+import { 
+  Paper,
+  TableContainer,
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell
+} from '@material-ui/core'
+import { Alert } from '@material-ui/lab'
 
-export const Departures = ({routeId, directionId, stopId}) => {
+export const Departures = () => {
+  const { routeId, directionId, stopId } = useParams()
   const departureData = useDepartures(routeId, directionId, stopId)
 
-  if(!departureData) return null
+  if (!departureData) return null
 
-  // if(departureData.departures.length) {
-    return (
-      <TableContainer component={Paper}>
+  if (!departureData.departures.length) return (
+    <Alert severity="error">{`Sorry, no upcoming departures for ${departureData.stops[0].description}.`}</Alert>
+  )
+
+  return (
+    <TableContainer component={Paper} >
       <Table>
         <TableHead>
           {departureData.stops.map(stop => (
@@ -19,17 +33,17 @@ export const Departures = ({routeId, directionId, stopId}) => {
             </TableRow>
           ))}
           <TableRow>
-            <TableCell>Route</TableCell>
-            <TableCell>Destination</TableCell>
-            <TableCell>Departs</TableCell>
+            <TableCell align='left'>Route</TableCell>
+            <TableCell align='left'>Destination</TableCell>
+            <TableCell align='right'>Departs</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {departureData.departures.map(departure => (
             <TableRow key={departure.trip_id}>
-              <TableCell>{departure.route_short_name}</TableCell>
-              <TableCell>{departure.description}</TableCell>
-              <TableCell>{departure.departure_text}</TableCell>
+              <TableCell align='left'>{departure.route_short_name}</TableCell>
+              <TableCell align='left'>{departure.description}</TableCell>
+              <TableCell align='right'>{departure.departure_text}</TableCell>
             </TableRow>
           ))}
         </TableBody>

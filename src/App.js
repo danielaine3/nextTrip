@@ -1,7 +1,7 @@
 import React from 'react'
-import { AllDropdowns } from './Components'
-import  { AppBar, Container, Typography, makeStyles } from '@material-ui/core'
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { AllDropdowns, Departures, Page } from './Components'
+import  { AppBar, Typography, makeStyles } from '@material-ui/core'
 
 
 const useStyles = makeStyles(() => ({
@@ -11,25 +11,27 @@ const useStyles = makeStyles(() => ({
   },
   title: {
     flexGrow: 1,
-    padding: 10
+    padding: 10,
   },
 }))
+
 export const App = () => {
   const classes = useStyles()
   return (
-    <div>
+    <Router>
       <AppBar position='static' className={classes.appbar}>
         <Typography variant='h3' className={classes.title}>
-          NexTrip
+          NextTrip
         </Typography>
       </AppBar>
-      <Container maxWidth='sm'>
-        <Typography variant='h5' className={classes.title}>
-          Real-time Departures
-        </Typography>
-        <AllDropdowns />
-      </Container>
-      
-    </div>
-  );
+      <Page title={'Real-time Departures'}>
+        <Route path='/'>
+          <AllDropdowns />
+        </Route>
+        <Route path='/:routeId/:directionId/:stopId'>
+          <Departures />
+        </Route>
+      </Page>
+    </Router>
+  )
 }

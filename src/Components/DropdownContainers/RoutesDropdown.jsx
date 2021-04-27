@@ -1,7 +1,9 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { Dropdown } from '../Dropdown'
 
 export const RoutesDropdown= ({routes, routeId, setRouteId}) => {
+  const history = useHistory()
   if(!routes) return null
   
   return (
@@ -9,6 +11,7 @@ export const RoutesDropdown= ({routes, routeId, setRouteId}) => {
       id='route-select'
       onSelect={(id) => {
         setRouteId(id)
+        history.push(`/${id}`)
       }}
       options={routes}
       selected={routeId}
